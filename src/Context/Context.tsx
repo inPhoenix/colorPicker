@@ -33,9 +33,7 @@ const reducer = (state: IColor[], action: IAction) => {
     case TYPES.ADD_COLOR:
       return [...state, { color: action.payload, id: uuidv4() }];
     case TYPES.UPDATE_COLOR:
-
-      const newState = state.slice();
-      newState.splice(1, 5);
+      const newState = [...state].splice(1, 5);
       return [
         ...newState,
         {
