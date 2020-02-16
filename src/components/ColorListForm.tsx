@@ -39,6 +39,12 @@ const ShowColorLarge = styled(ShowColor)`
   border-radius: 3px;
 `;
 
+const Form = styled.form`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const ColorListForm: React.FC<IProps> = () => {
   const { state, dispatch } = useContext(CounterContext);
   const [color, setColor] = useState('#00ff90');
@@ -77,13 +83,13 @@ const ColorListForm: React.FC<IProps> = () => {
       <SliderWrapper>
         <HuePicker color={color} onChange={handleColorChange} onChangeComplete={handleColorChange} />
       </SliderWrapper>
-      <form onSubmit={handleSave}>
+      <Form onSubmit={handleSave}>
         <Input value={color} onChange={handleInputChange} />
         <Button>Save</Button>
-        <ReactTransitionFade>
-          {isDuplicatedColor && <Item color="brown">The color is already on the list.</Item>}
-        </ReactTransitionFade>
-      </form>
+      </Form>
+      <ReactTransitionFade>
+        {isDuplicatedColor && <Item color="brown">The color is already on the list.</Item>}
+      </ReactTransitionFade>
     </>
   );
 };
