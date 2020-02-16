@@ -6,9 +6,9 @@ import { Input } from './styledComponents/Input';
 import { Item } from './styledComponents/Item';
 
 import { ColorResult, HuePicker } from 'react-color';
+import ReactTransitionFade from './utils/ReactTransitionFade';
 
 import styled from 'styled-components';
-import ReactTransitionFade from './ReactTransitionFade';
 
 interface IProps {}
 

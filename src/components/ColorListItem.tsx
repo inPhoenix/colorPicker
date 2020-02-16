@@ -2,14 +2,14 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { CounterContext, IColor, TYPES } from '../Context/Context';
 import { ShowColor } from './ColorListForm';
-import ReactTransitionFade from './ReactTransitionFade';
+import ReactTransitionFade from './utils/ReactTransitionFade';
 import { Item } from './styledComponents/Item';
 
 interface IProps {}
 
 const ColorItem = styled.div`
- margin: 0 15px;
-`
+  margin: 0 15px;
+`;
 
 const ColorListWrapper = styled.div`
   display: flex;
