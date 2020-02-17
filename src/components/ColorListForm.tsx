@@ -74,7 +74,6 @@ const ColorListForm: React.FC<IProps> = () => {
       return dispatch({ type: TYPES.UPDATE_COLOR, payload: color });
     }
     dispatch({ type: TYPES.ADD_COLOR, payload: color });
-    dispatch({ type: 'FETCH', payload: color });
   };
 
   return (
