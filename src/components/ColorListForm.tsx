@@ -1,6 +1,6 @@
 import React, { FormEvent, useContext, useState } from 'react';
 
-import { CounterContext, IColor, TYPES } from '../Context/Context';
+import { COLOR_LIMIT, CounterContext, IColor, TYPES } from '../Context/Context';
 import { Button } from './styledComponents/Button';
 import { Input } from './styledComponents/Input';
 import { Item } from './styledComponents/Item';
@@ -11,8 +11,6 @@ import ReactTransitionFade from './utils/ReactTransitionFade';
 import styled from 'styled-components';
 
 interface IProps {}
-
-const ARRAY_LIMIT = 5;
 
 export const ShowColor = styled.div`
   background: ${(props: any) => (props.color ? props.color : 'white')};
@@ -70,7 +68,7 @@ const ColorListForm: React.FC<IProps> = () => {
       setDuplicatedColor(false);
     }
 
-    if (state.length >= ARRAY_LIMIT) {
+    if (state.length >= COLOR_LIMIT) {
       return dispatch({ type: TYPES.UPDATE_COLOR, payload: color });
     }
     dispatch({ type: TYPES.ADD_COLOR, payload: color });

@@ -5,7 +5,6 @@ import { CounterProvider } from '../Context/Context';
 
 describe('<ColorList/>', () => {
   it('renders input and a button ', () => {
-
     // Arrange
     const { getByRole } = render(
       <CounterProvider>
@@ -42,7 +41,6 @@ describe('<ColorList/>', () => {
   });
 
   it('verifies if only the last 5 colors are displayed', () => {
-
     // Arrange
     const COLOR_LIMIT = 5; // according to the spec
     const colorList = ['red', 'blue', 'yellow', 'violet', 'pink', 'teal'];
