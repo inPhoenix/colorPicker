@@ -7,6 +7,8 @@ export const TYPES = {
   COPY_TO_CLIPBOARD: 'COPY_TO_CLIPBOARD'
 };
 
+export const COLOR_LIMIT = 5;
+
 interface IAction {
   type: string;
   payload: string | any;
@@ -21,19 +23,13 @@ export interface IColor {
 const reducer = (state: IColor[], action: IAction) => {
   switch (action.type) {
     case TYPES.COPY_TO_CLIPBOARD:
-      const stateClone = state.slice(); // [...state];
-      stateClone.forEach(color => {
-        if (color.color === action.payload.color) {
-          color.copied = action.payload.copied;
-        } else {
-          color.copied = false;
-        }
-      });
-      return stateClone;
+      return state.map(obj =>
+        obj.color === action.payload.color ? { ...obj, copied: true } : { ...obj, copied: false }
+      );
     case TYPES.ADD_COLOR:
       return [...state, { color: action.payload, id: uuidv4() }];
     case TYPES.UPDATE_COLOR:
-      const newState = [...state].splice(1, 5);
+      const newState = [...state].splice(1, COLOR_LIMIT);
       return [
         ...newState,
         {
