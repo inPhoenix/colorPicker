@@ -1,21 +1,33 @@
 import React, { FormEvent, useContext, useState } from 'react';
+import styled from 'styled-components';
+import { ColorResult, HuePicker } from 'react-color';
+import readableColor from 'polished/lib/color/readableColor';
 
+import isColor from '../utils/isColor';
 import { COLOR_LIMIT, CounterContext, IColor, TYPES } from '../Context/Context';
 import { Button } from './styledComponents/Button';
 import { Input } from './styledComponents/Input';
 import { Item } from './styledComponents/Item';
-
-import { ColorResult, HuePicker } from 'react-color';
-import ReactTransitionFade from './utils/ReactTransitionFade';
-
-import styled from 'styled-components';
+import ReactTransitionFade from './common/ReactTransitionFade';
 
 interface IProps {}
 
 export const ShowColor = styled.div`
   background: ${(props: any) => (props.color ? props.color : 'white')};
-  width: 10%;
+  width: 13%;
+  height: 12px;
   padding-top: 30px;
+`;
+
+const ShowColorLarge = styled(ShowColor)`
+  color: ${(props: any) => (isColor(props.color) ? readableColor(props.color) : 'red')};
+  height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+  font-weight: 600;
+  border-radius: 3px;
 `;
 
 export const SliderWrapper = styled.div`
@@ -24,17 +36,6 @@ export const SliderWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 15px 0;
-`;
-
-const ShowColorLarge = styled(ShowColor)`
-  height: 50px;
-  position: relative;
-  width: 100%;
-  text-align: center;
-  color: #7c78ff;
-  margin: 10px 0;
-  font-weight: 600;
-  border-radius: 3px;
 `;
 
 const Form = styled.form`
@@ -76,7 +77,7 @@ const ColorListForm: React.FC<IProps> = () => {
 
   return (
     <>
-      <ShowColorLarge color={color}> Current Color </ShowColorLarge>
+      <ShowColorLarge color={color}> {isColor(color) ? <>{color}</> : 'Invalid Color'}</ShowColorLarge>
       <SliderWrapper>
         <HuePicker color={color} onChange={handleColorChange} onChangeComplete={handleColorChange} />
       </SliderWrapper>

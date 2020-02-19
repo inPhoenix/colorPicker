@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+
 import { CounterContext, IColor, TYPES } from '../Context/Context';
 import { ShowColor } from './ColorListForm';
-import ReactTransitionFade from './utils/ReactTransitionFade';
+import ReactTransitionFade from './common/ReactTransitionFade';
 import { Item } from './styledComponents/Item';
 
 interface IProps {}
@@ -16,6 +17,7 @@ const ColorListWrapper = styled.div`
   align-items: center;
   border: 1px solid #d2d3cb;
   margin-top: 4px;
+  height: 2.5rem;
   cursor: pointer;
   &:hover {
     background: whitesmoke;
@@ -26,7 +28,7 @@ const ColorListItem: React.FC<IProps> = () => {
   const { state, dispatch } = useContext(CounterContext);
   const getColor = (color: any) => {
     dispatch({ type: TYPES.COPY_TO_CLIPBOARD, payload: { copied: true, color: color } });
-    // Preventing any error when copying to clipboard
+    // TODO: FIX for other browsers
     navigator && navigator.clipboard && navigator.clipboard.writeText(color);
   };
 
