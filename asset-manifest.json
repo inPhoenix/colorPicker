@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/colorPicker/static/css/main.44331b64.chunk.css",
-    "main.js": "/colorPicker/static/js/main.8ae22be4.chunk.js",
-    "main.js.map": "/colorPicker/static/js/main.8ae22be4.chunk.js.map",
+    "main.js": "/colorPicker/static/js/main.8c214e20.chunk.js",
+    "main.js.map": "/colorPicker/static/js/main.8c214e20.chunk.js.map",
     "runtime-main.js": "/colorPicker/static/js/runtime-main.42166a38.js",
     "runtime-main.js.map": "/colorPicker/static/js/runtime-main.42166a38.js.map",
-    "static/js/2.76ebd0c4.chunk.js": "/colorPicker/static/js/2.76ebd0c4.chunk.js",
-    "static/js/2.76ebd0c4.chunk.js.map": "/colorPicker/static/js/2.76ebd0c4.chunk.js.map",
+    "static/js/2.315366cb.chunk.js": "/colorPicker/static/js/2.315366cb.chunk.js",
+    "static/js/2.315366cb.chunk.js.map": "/colorPicker/static/js/2.315366cb.chunk.js.map",
     "index.html": "/colorPicker/index.html",
-    "precache-manifest.65cad944a48f8d7a3538aec26d3b847d.js": "/colorPicker/precache-manifest.65cad944a48f8d7a3538aec26d3b847d.js",
+    "precache-manifest.21ca391d27a90fdaf87d1f739bedc56f.js": "/colorPicker/precache-manifest.21ca391d27a90fdaf87d1f739bedc56f.js",
     "service-worker.js": "/colorPicker/service-worker.js",
     "static/css/main.44331b64.chunk.css.map": "/colorPicker/static/css/main.44331b64.chunk.css.map",
-    "static/js/2.76ebd0c4.chunk.js.LICENSE.txt": "/colorPicker/static/js/2.76ebd0c4.chunk.js.LICENSE.txt"
+    "static/js/2.315366cb.chunk.js.LICENSE.txt": "/colorPicker/static/js/2.315366cb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.42166a38.js",
-    "static/js/2.76ebd0c4.chunk.js",
+    "static/js/2.315366cb.chunk.js",
     "static/css/main.44331b64.chunk.css",
-    "static/js/main.8ae22be4.chunk.js"
+    "static/js/main.8c214e20.chunk.js"
   ]
 }
