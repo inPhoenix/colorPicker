@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import ColorList from './ColorList';
 import { ThemeContext, TYPES } from '../Context/ThemeContext';

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const Header = ({ handleChange }) => {
+interface IProps {
+  handleChange: (value: boolean) => void;
+}
+
+const Header: React.FC<IProps> = ({ handleChange }) => {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
