@@ -89,7 +89,7 @@ const ColorListForm: React.FC<IProps> = () => {
         <Button>Save</Button>
       </Form>
       <ReactTransitionFade>
-        {isDuplicatedColor && <Item color="brown">The color is already on the list.</Item>}
+        {isDuplicatedColor && <Item color="deeppink">The color is already on the list.</Item>}
       </ReactTransitionFade>
     </>
   );
