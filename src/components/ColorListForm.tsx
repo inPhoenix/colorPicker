@@ -4,7 +4,7 @@ import { ColorResult, HuePicker } from 'react-color';
 import readableColor from 'polished/lib/color/readableColor';
 
 import isColor from '../utils/isColor';
-import { COLOR_LIMIT, CounterContext, IColor, TYPES } from '../Context/Context';
+import { COLOR_LIMIT, ColorContext, IColor, TYPES } from '../Context/ColorContext';
 import { Button } from './styledComponents/Button';
 import { Input } from './styledComponents/Input';
 import { Item } from './styledComponents/Item';
@@ -15,13 +15,16 @@ interface IProps {}
 export const ShowColor = styled.div`
   background: ${(props: any) => (props.color ? props.color : 'white')};
   width: 13%;
-  height: 12px;
-  padding-top: 30px;
+  height: 100%;
+ 
 `;
 
 const ShowColorLarge = styled(ShowColor)`
+align-items: center;
   color: ${(props: any) => (isColor(props.color) ? readableColor(props.color) : 'red')};
   height: 50px;
+  padding: 30px 0;
+  line-height: 0;
   position: relative;
   width: 100%;
   text-align: center;
@@ -45,7 +48,7 @@ const Form = styled.form`
 `;
 
 const ColorListForm: React.FC<IProps> = () => {
-  const { state, dispatch } = useContext(CounterContext);
+  const { state, dispatch } = useContext(ColorContext);
   const [color, setColor] = useState('#00ff90');
 
   const [isDuplicatedColor, setDuplicatedColor] = useState(false);

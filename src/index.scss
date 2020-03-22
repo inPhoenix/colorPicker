@@ -1,3 +1,6 @@
+@import './styles/toggle.scss';
+@import "./styles/reset.scss";
+
 .fade-enter {
   opacity: 0.01;
 }
@@ -14,4 +17,20 @@
 .fade-leave.fade-leave-active {
   opacity: 0.01;
   transition: opacity 600ms ease-in;
+}
+
+.header {
+  height: 50px;
+  background: #16212c;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.link {
+  align-self: center;
+  padding: 5px 30px;
+  align-items: center;
+  color: deeppink;
 }

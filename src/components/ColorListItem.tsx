@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 
-import { CounterContext, IColor, TYPES } from '../Context/Context';
+import { ColorContext, IColor, TYPES } from '../Context/ColorContext';
 import { ShowColor } from './ColorListForm';
 import ReactTransitionFade from './common/ReactTransitionFade';
 import { Item } from './styledComponents/Item';
@@ -20,12 +20,12 @@ const ColorListWrapper = styled.div`
   height: 2.5rem;
   cursor: pointer;
   &:hover {
-    background: whitesmoke;
+    background: ${props => (props.theme.primary === 'light' ? 'whitesmoke' : '#14122b')};
   }
 `;
 
 const ColorListItem: React.FC<IProps> = () => {
-  const { state, dispatch } = useContext(CounterContext);
+  const { state, dispatch } = useContext(ColorContext);
   const getColor = (color: any) => {
     dispatch({ type: TYPES.COPY_TO_CLIPBOARD, payload: { copied: true, color: color } });
     // TODO: FIX for other browsers

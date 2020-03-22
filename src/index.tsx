@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss'
+import './index.scss';
 
 import App from './components/App';
-import { CounterProvider } from './Context/Context';
+import { ColorProvider } from './Context/ColorContext';
+import { ThemeProvider } from './Context/ThemeContext';
 
 ReactDOM.render(
-  <CounterProvider>
-    <App />
-  </CounterProvider>,
+  <ColorProvider>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </ColorProvider>,
   document.getElementById('root')
 );

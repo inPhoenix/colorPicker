@@ -5,6 +5,6 @@ export const Item = styled.div`
   font-size: 13px;
   color: ${(props: any) => (props.color ? props.color : 'slategrey')};
   &:hover {
-    color: #435790;
+    color: ${(props: any) => (props.theme.primary === 'light' ? 'palevioletred' : 'white')};
   }
 `;

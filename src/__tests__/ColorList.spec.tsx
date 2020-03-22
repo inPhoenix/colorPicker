@@ -1,15 +1,15 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import ColorList from '../components/ColorList';
-import { CounterProvider } from '../Context/Context';
+import { ColorProvider } from '../Context/ColorContext';
 
 describe('<ColorList/>', () => {
   it('renders input and a button ', () => {
     // Arrange
     const { getByRole } = render(
-      <CounterProvider>
+      <ColorProvider>
         <ColorList />
-      </CounterProvider>
+      </ColorProvider>
     );
 
     // Act
@@ -23,9 +23,9 @@ describe('<ColorList/>', () => {
   it('verifies if one color is saved ', () => {
     // Arrange
     const { getByRole, container } = render(
-      <CounterProvider>
+      <ColorProvider>
         <ColorList />
-      </CounterProvider>
+      </ColorProvider>
     );
 
     // Act
@@ -46,9 +46,9 @@ describe('<ColorList/>', () => {
     const colorList = ['red', 'blue', 'yellow', 'violet', 'pink', 'teal'];
 
     const { getByRole, queryAllByRole } = render(
-      <CounterProvider>
+      <ColorProvider>
         <ColorList />
-      </CounterProvider>
+      </ColorProvider>
     );
 
     // Act

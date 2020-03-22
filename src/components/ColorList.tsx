@@ -6,13 +6,6 @@ import ColorListForm from './ColorListForm';
 
 interface IProps {}
 
-const Link = styled.a`
-  display: flex;
-  align-items: center;
-  padding: 25px 3px;
-  color: palevioletred;
-`;
-
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -26,9 +19,6 @@ const ColorList: React.FC<IProps> = () => {
     <Wrapper>
       <ColorListForm />
       <ColorListItem />
-      <Link href="https://www.github.com/inPhoenix/colorPicker" rel="noopener noreferrer" target="_blank">
-        GitHub Code
-      </Link>
     </Wrapper>
   );
 };

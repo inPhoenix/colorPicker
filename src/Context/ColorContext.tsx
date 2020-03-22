@@ -49,10 +49,10 @@ const initialState: IColor[] | any = [
     copied: false
   }
 ];
-const CounterContext = React.createContext(initialState);
-function CounterProvider(props: any) {
+const ColorContext = React.createContext(initialState);
+function ColorProvider(props: any) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  return <CounterContext.Provider value={{ state, dispatch }}>{props.children}</CounterContext.Provider>;
+  return <ColorContext.Provider value={{ state, dispatch }}>{props.children}</ColorContext.Provider>;
 }
 
-export { CounterContext, CounterProvider };
+export { ColorContext, ColorProvider };
